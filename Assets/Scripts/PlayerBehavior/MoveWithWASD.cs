@@ -6,7 +6,7 @@ public class MoveWithWASD : MonoBehaviour {
 
 	//customizable values
 	public float jumpForce = 2f;
-	public float continuousJumpForce = 0.7f;		//force added by holding down the button
+	public float continuousJumpForce = 0.7f;	//force added by holding down the button
 	public float continuousJumpDecay = 0.001f;
 	public float horizontalForce = 12f;
 	public float airControlDecay = 0.001f;
