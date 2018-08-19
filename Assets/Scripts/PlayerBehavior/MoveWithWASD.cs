@@ -10,7 +10,7 @@ public class MoveWithWASD : MonoBehaviour {
 	public float continuousJumpDecay = 0.001f;
 	public float horizontalForce = 12f;
 	public float airControlDecay = 0.001f;
-	public float maxHorizontalVelocity = 2.5f;
+	public float maxHorizontalVelocity = 3f;
 	
 	private float maxContJumpForce;
 	private float airControlMultiplier;
