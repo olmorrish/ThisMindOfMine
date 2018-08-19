@@ -16,6 +16,20 @@ TextureImporter:
     21300022: alpha_obstacle_handcreeper_11
     21300024: alpha_obstacle_handcreeper_12
     21300026: alpha_obstacle_handcreeper_13
+    21300028: alpha_obstacle_tentacledoor_0
+    21300030: alpha_obstacle_tentacledoor_1
+    21300032: alpha_obstacle_tentacledoor_2
+    21300034: alpha_obstacle_tentacledoor_3
+    21300036: alpha_obstacle_tentacledoor_4
+    21300038: alpha_obstacle_tentacledoor_5
+    21300040: alpha_obstacle_tentacledoor_6
+    21300042: alpha_obstacle_tentacledoor_7
+    21300044: alpha_obstacle_tentacledoor_8
+    21300046: alpha_obstacle_tentacledoor_9
+    21300048: alpha_obstacle_tentacledoor_10
+    21300050: alpha_obstacle_tentacledoor_11
+    21300052: alpha_obstacle_tentacledoor_12
+    21300054: alpha_obstacle_tentacledoor_13
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -120,7 +134,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_0
+      name: alpha_obstacle_tentacledoor_0
       rect:
         serializedVersion: 2
         x: 1
@@ -134,13 +148,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71c9d771ab8560444988afccfebf1b0f
+      spriteID: 64d089665242c084f891ca3d50cba0be
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_1
+      name: alpha_obstacle_tentacledoor_1
       rect:
         serializedVersion: 2
         x: 18
@@ -154,13 +168,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d9769654375ec04e89cc5b838226937
+      spriteID: 921c11d3e4eb1eb4b9da9905d9089ee2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_2
+      name: alpha_obstacle_tentacledoor_2
       rect:
         serializedVersion: 2
         x: 35
@@ -174,13 +188,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a6ee9f019b9ca34c8f825993cb08da3
+      spriteID: 6433fe37eafb85d4ea8477c62cbd9a81
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_3
+      name: alpha_obstacle_tentacledoor_3
       rect:
         serializedVersion: 2
         x: 52
@@ -194,13 +208,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e641b1cb7fd4fad45ad8b67436590aae
+      spriteID: bb45ce1fa236ff041ba7a4353c8ab272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_4
+      name: alpha_obstacle_tentacledoor_4
       rect:
         serializedVersion: 2
         x: 69
@@ -214,13 +228,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c08041477120984fa203dda6e61bddc
+      spriteID: 5db684b832fc07b4d8a2a1df8f62105c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_5
+      name: alpha_obstacle_tentacledoor_5
       rect:
         serializedVersion: 2
         x: 86
@@ -234,13 +248,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa41b0dedb3f0c54197951d8a2b2b9ba
+      spriteID: 8a16de813fd32af41a78c0f67335cca5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_6
+      name: alpha_obstacle_tentacledoor_6
       rect:
         serializedVersion: 2
         x: 103
@@ -254,13 +268,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aaed82dad0489c049a7ce208a3d1f53d
+      spriteID: 99d93d2da92b1f248bf047872b1ee5c3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_7
+      name: alpha_obstacle_tentacledoor_7
       rect:
         serializedVersion: 2
         x: 120
@@ -274,13 +288,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd83d1283a6a393409d94fbcedfe93bf
+      spriteID: fefad6cb1af44de4bb39c9b3278c71bc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_8
+      name: alpha_obstacle_tentacledoor_8
       rect:
         serializedVersion: 2
         x: 137
@@ -294,13 +308,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a39af5893511c844d89f044da6f7f3bd
+      spriteID: 87dc894b06d9bc34c87c0a25f9ec6192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_9
+      name: alpha_obstacle_tentacledoor_9
       rect:
         serializedVersion: 2
         x: 154
@@ -314,13 +328,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7593299518a2e246b23dc505aefcf8b
+      spriteID: 903a0b6803543a949a0d1553ebb19140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_10
+      name: alpha_obstacle_tentacledoor_10
       rect:
         serializedVersion: 2
         x: 171
@@ -334,13 +348,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0634a39914bfcce4a970d88e37b61614
+      spriteID: 3169e186cbd0a104f9b91db08b5ca1f7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_11
+      name: alpha_obstacle_tentacledoor_11
       rect:
         serializedVersion: 2
         x: 188
@@ -354,13 +368,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5d5a91a9203ab64ca790952429c60c0
+      spriteID: 612fa11aa746b2a4d84985f8043f9403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_12
+      name: alpha_obstacle_tentacledoor_12
       rect:
         serializedVersion: 2
         x: 205
@@ -374,13 +388,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32f3b797ac9f7794581c9825950dddae
+      spriteID: 5ec377bfdde39614e9d2b073fe138992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alpha_obstacle_handcreeper_13
+      name: alpha_obstacle_tentacledoor_13
       rect:
         serializedVersion: 2
         x: 222
@@ -394,7 +408,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 913a594937b878942a2928a59a320156
+      spriteID: a149435f74f3e1d498e68568ee23e679
       vertices: []
       indices: 
       edges: []

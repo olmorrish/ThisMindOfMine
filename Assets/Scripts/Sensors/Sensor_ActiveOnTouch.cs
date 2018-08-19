@@ -16,7 +16,10 @@ public class Sensor_ActiveOnTouch : MonoBehaviour {
 	void Awake() {
 		pulse = false; 
 		collisionStay = false;
-		antenna = sendsPulseTo.GetComponent<Reciever>();
+		
+		if(sendsPulseTo != null){
+			antenna = sendsPulseTo.GetComponent<Reciever>();
+		}
 	}
 	
 	void OnCollisionEnter2D(Collision2D col){
@@ -35,7 +38,7 @@ public class Sensor_ActiveOnTouch : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if(pulse){
+		if(pulse && sendsPulseTo != null){
 			antenna.pulse = true;
 		}
 	}
