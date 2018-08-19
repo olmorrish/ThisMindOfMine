@@ -5,8 +5,9 @@ using UnityEngine;
 public class Sensor_ActiveOnTouch : MonoBehaviour {
 
 	public GameObject sendsPulseTo;
+	public bool isHoldButton = true;
 
-	private bool pulse;
+	public bool pulse;
 	private bool collisionStay;
 
 	private Reciever antenna;
@@ -24,7 +25,9 @@ public class Sensor_ActiveOnTouch : MonoBehaviour {
 	}
 	
 	void OnCollisionExit2D(Collision2D col){
-		pulse = false;
+		if(isHoldButton){
+			pulse = false;
+		}
 		collisionStay = false;
 	}
 	
