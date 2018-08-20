@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: FloorButton_Hold
+  m_Name: RightButton
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Pressed
@@ -23,7 +23,7 @@ AnimatorController:
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
-    m_StateMachine: {fileID: 1107423154020174190}
+    m_StateMachine: {fileID: 1107983684577955088}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -33,7 +33,7 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &1101134541835854082
+--- !u!1101 &1101069560852847510
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,8 +43,11 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Pressed
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isHoldButton
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102578535097976390}
+  m_DstState: {fileID: 1102628941706849030}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -57,7 +60,7 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101328256995002308
+--- !u!1101 &1101351677093002006
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,10 +68,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Pressed
+    m_ConditionEvent: isHoldButton
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102578535097976390}
+  m_DstState: {fileID: 1102069342944144712}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -81,7 +84,31 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101886106059790668
+--- !u!1101 &1101482292182145494
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Pressed
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102628941706849030}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &1101631342718655272
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,7 +122,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isHoldButton
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102410724768122416}
+  m_DstState: {fileID: 1102069342944144712}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -108,41 +135,17 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101966881202116064
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: isHoldButton
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102410724768122416}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
---- !u!1102 &1102410724768122416
+--- !u!1102 &1102069342944144712
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: FloorButton_Yellow
+  m_Name: RightButton_Yellow
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 1101328256995002308}
+  - {fileID: 1101069560852847510}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -152,23 +155,24 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: aee37a9da532c8b4c90946d209c45ca9, type: 2}
+  m_Motion: {fileID: 7400000, guid: dca2ff1d7e17e01458c24330d0d2508c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102578535097976390
+--- !u!1102 &1102271705498781508
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: FloorButton_Green
+  m_Name: RightButton_Red
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 1101886106059790668}
+  - {fileID: 1101351677093002006}
+  - {fileID: 1101482292182145494}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -178,24 +182,23 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 343b77e822e0a8f42b1158f2d6c46e20, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2ef01b2f99a58b14f9bb9f51e8d8442f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102757256636090520
+--- !u!1102 &1102628941706849030
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: FloorButton_Red
+  m_Name: RightButton_Green
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 1101966881202116064}
-  - {fileID: 1101134541835854082}
+  - {fileID: 1101631342718655272}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -205,13 +208,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 301a6bc79fe053a45b570bdd3ede421c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1b259546664489f4a95593ecab22037a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1107 &1107423154020174190
+--- !u!1107 &1107983684577955088
 AnimatorStateMachine:
   serializedVersion: 5
   m_ObjectHideFlags: 1
@@ -220,21 +223,21 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 1102578535097976390}
-    m_Position: {x: 240, y: 156, z: 0}
+    m_State: {fileID: 1102628941706849030}
+    m_Position: {x: 72, y: -36, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102410724768122416}
-    m_Position: {x: 372, y: -12, z: 0}
+    m_State: {fileID: 1102069342944144712}
+    m_Position: {x: 180, y: -132, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102757256636090520}
-    m_Position: {x: 48, y: -12, z: 0}
+    m_State: {fileID: 1102271705498781508}
+    m_Position: {x: -48, y: -132, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 792, y: 48, z: 0}
-  m_EntryPosition: {x: 228, y: -96, z: 0}
+  m_AnyStatePosition: {x: 384, y: -204, z: 0}
+  m_EntryPosition: {x: 72, y: -228, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102757256636090520}
+  m_DefaultState: {fileID: 1102271705498781508}
