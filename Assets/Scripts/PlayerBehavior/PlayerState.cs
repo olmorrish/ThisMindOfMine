@@ -6,6 +6,7 @@ public class PlayerState : MonoBehaviour {
 
 	public bool onGround;		 
 	public bool jumpHeldDown;
+	public bool grabbing;
 	
 	public int currentHealth;
 
@@ -13,6 +14,7 @@ public class PlayerState : MonoBehaviour {
 	void Awake () {
 		onGround = false;
 		jumpHeldDown = false;
+		grabbing = false;
 		currentHealth = 3;
 	}
 	
