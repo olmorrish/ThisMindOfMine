@@ -45,17 +45,20 @@ public class PlayerState : MonoBehaviour {
 		//if damage has just been taken, throw the player upwards!
 		if(damageCooldownFramesRemaining == damageCooldownFrames - 1){
 			
-			//generate a horizontal knockback force
-			float knockback = Random.Range(1, 3f);
+			//horizontal knockback force
+			float knockback = 3f;
 			
 			//if the player was moving right when colliding, set knockback to push player left
 			if((GetComponent<Rigidbody2D>().velocity.x) > 0){
-				knockback = -knockback;
-				onGround = false;
+				knockback = -3f;
 			}
-			
+				
 			//apply a knockback with an upwards force
 			GetComponent<Rigidbody2D>().AddForce(new Vector3(knockback, 2.0f, 0) * GetComponent<MoveWithWASD>().jumpForce, ForceMode2D.Impulse);
+		
+			//restrict midair movement
+			onGround = false;
+			GetComponent<MoveWithWASD>().airControlMultiplier = 0;
 		}
 	}
 }

@@ -13,7 +13,7 @@ public class MoveWithWASD : MonoBehaviour {
 	public float maxHorizontalVelocity = 3f;
 	
 	private float maxContJumpForce;
-	private float airControlMultiplier;
+	public float airControlMultiplier;
 
 	private Rigidbody2D playerRB;
 	private PlayerState state;
