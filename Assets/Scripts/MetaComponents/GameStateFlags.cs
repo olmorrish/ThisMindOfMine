@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class GameStateFlags : MonoBehaviour {
 
+	public bool canSpawnBlocks = false;
+	public bool hasBlock_Insec = false;
+	public bool hasBlock_Anx = false;
+	public bool hasBlock_Frust = false;
+
+	void Awake () {
+
+	}
+	
 	// Use this for initialization
 	void Start () {
 		

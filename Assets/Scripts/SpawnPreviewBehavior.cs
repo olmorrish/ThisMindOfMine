@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleSideLR : MonoBehaviour {
+public class SpawnPreviewBehavior : MonoBehaviour {
 
 	public bool isRight;
 	
@@ -17,11 +17,11 @@ public class ToggleSideLR : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKey("a") && isRight && state.onGround){
-			gameObject.transform.Translate(-(2f/16f),0,0);
+			gameObject.transform.Translate(-(23f/16f),0,0);
 			isRight = false;
 		}
 		else if(Input.GetKey("d") && !isRight && state.onGround){
-			gameObject.transform.Translate((2f/16f),0,0);
+			gameObject.transform.Translate((23f/16f),0,0);
 			isRight = true;
 		}
 	}
