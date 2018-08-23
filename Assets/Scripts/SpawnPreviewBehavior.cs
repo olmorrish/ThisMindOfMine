@@ -5,14 +5,21 @@ using UnityEngine;
 public class SpawnPreviewBehavior : MonoBehaviour {
 
 	public bool isRight;
+	public bool overlap; 
 	
 	private PlayerState state;
+	//private Collider2D myHitbox; 
+	
+	private Collider2D levelHitbox; 
 
 	// Use this for initialization
 	void Awake () {
 		isRight = true;
 		state = GameObject.Find("Player").GetComponent<PlayerState>();
+		//myHitbox = GetComponent<Collider2D>();
 	}
+
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -24,5 +31,8 @@ public class SpawnPreviewBehavior : MonoBehaviour {
 			gameObject.transform.Translate((23f/16f),0,0);
 			isRight = true;
 		}
+
+		
 	}
+	
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GameStateFlags : MonoBehaviour {
 
-	public bool canSpawnBlocks = false;
-	public bool hasBlock_Insec = false;
-	public bool hasBlock_Anx = false;
-	public bool hasBlock_Frust = false;
+	public bool canSpawnBlocks = true;	//TODO: Change on release build
+	public bool hasInsec = true;
+	public bool hasAnx = true;
+	public bool hasFrust = true;
 
 	void Awake () {
 
