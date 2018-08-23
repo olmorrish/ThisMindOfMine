@@ -8,14 +8,14 @@ public class Sensor_ActiveOnTouch : MonoBehaviour {
 	public bool isHoldButton = true;
 
 	public bool pulse;
-	private bool collisionStay;
+	//private bool collisionStay;
 
 	private Reciever antenna;
 	
 	// Use this for initialization
 	void Awake() {
 		pulse = false; 
-		collisionStay = false;
+		//collisionStay = false;
 		
 		if(sendsPulseTo != null){
 			antenna = sendsPulseTo.GetComponent<Reciever>();
@@ -24,14 +24,14 @@ public class Sensor_ActiveOnTouch : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D col){
 		pulse = true;
-		collisionStay = true;
+		//collisionStay = true;
 	}
 	
 	void OnCollisionExit2D(Collision2D col){
 		if(isHoldButton){
 			pulse = false;
 		}
-		collisionStay = false;
+		//collisionStay = false;
 	}
 	
 	
