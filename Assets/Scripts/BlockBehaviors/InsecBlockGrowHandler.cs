@@ -38,7 +38,7 @@ public class InsecBlockGrowHandler : MonoBehaviour {
 		
 		if(!state.isSpawned && big){
 			big = false;
-			hitbox.size = new Vector2(0.01f,(30f/16f));
+			hitbox.size = new Vector2(0.01f, (30f/16f));
 			animator.SetBool("isBig", false);
 		}
 		
@@ -52,9 +52,9 @@ public class InsecBlockGrowHandler : MonoBehaviour {
 		//Button Handling
 		/////////////////
 		
-		if(Input.GetKey("q")){
+		if(Input.GetButton("Ability")){
 			
-			if(Input.GetKeyDown("1")){
+			if(Input.GetButtonDown("Insec")){
 				big = true;
 			}
 			

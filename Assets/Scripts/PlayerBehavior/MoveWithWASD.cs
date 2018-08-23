@@ -35,7 +35,7 @@ public class MoveWithWASD : MonoBehaviour {
 		// Vertical Player Movement
 		///////////////////////////
 
-		if(Input.GetKey("w") && !state.grabbing){	//cannot jump if grabbing!
+		if(Input.GetButton("Jump") && !state.grabbing){	//cannot jump if grabbing!
 			
 			//begin to jump condition
 			if(state.onGround && playerRB.velocity.y > -0.01){
@@ -74,7 +74,20 @@ public class MoveWithWASD : MonoBehaviour {
 		/////////////////////////////
 		// Horizontal Player Movement
 		/////////////////////////////
+		if(Input.GetAxis("Horizontal")>0 && !state.onGround){
+			playerRB.AddForce((new Vector3(1, 0, 0)) * horizontalForce * airControlMultiplier, ForceMode2D.Force);
+		}
+		else if(Input.GetAxis("Horizontal")>0){
+			playerRB.AddForce((new Vector3(1, 0, 0)) * horizontalForce, ForceMode2D.Force);
+		}
+		if(Input.GetAxis("Horizontal")<0 && !state.onGround){
+			playerRB.AddForce((new Vector3(-1, 0, 0)) * horizontalForce * airControlMultiplier, ForceMode2D.Force);
+		}
+		else if(Input.GetAxis("Horizontal")<0){
+			playerRB.AddForce((new Vector3(-1, 0, 0)) * horizontalForce, ForceMode2D.Force);
+		}
 		
+		/*
 		if(Input.GetKey("d") && !state.onGround){
 			playerRB.AddForce((new Vector3(1, 0, 0)) * horizontalForce * airControlMultiplier, ForceMode2D.Force);
 		}
@@ -87,6 +100,7 @@ public class MoveWithWASD : MonoBehaviour {
 		else if(Input.GetKey("a")){
 			playerRB.AddForce((new Vector3(-1, 0, 0)) * horizontalForce, ForceMode2D.Force);
 		}
+		*/
 		
 		//update or reset airControlMultiplier
 		if(state.onGround){

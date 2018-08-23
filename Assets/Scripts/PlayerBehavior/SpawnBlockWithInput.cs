@@ -49,14 +49,14 @@ public class SpawnBlockWithInput : MonoBehaviour {
 		///////////
 		// SPAWN //
 		///////////
-		if(Input.GetKey("e") && state.onGround && flags.canSpawnBlocks){
+		if(Input.GetButton("Spawn") && state.onGround && flags.canSpawnBlocks){
 			
 			spawnPreview.enabled = true;	//can see the preview 
 			
 			if(cooldown == 0){
 				
 				//spawn block1
-				if(Input.GetKeyDown("1") && !Input.GetKey("q") && !insec.isSpawned && flags.hasInsec){
+				if(Input.GetButtonDown("Insec") && !Input.GetButton("Ability") && !insec.isSpawned && flags.hasInsec){
 					insec.isSpawned = true;
 					cooldown = cooldownMax;
 				}
@@ -72,7 +72,7 @@ public class SpawnBlockWithInput : MonoBehaviour {
 		/////////////
 		// DESPAWN //
 		/////////////
-		if(Input.GetKeyDown("1") && !Input.GetKey("q") && insec.isSpawned && cooldown==0){
+		if(Input.GetButtonDown("Insec") && !Input.GetButton("Ability") && insec.isSpawned && cooldown==0){
 			insec.isSpawned = false;
 			cooldown = cooldownMax;
 		}
