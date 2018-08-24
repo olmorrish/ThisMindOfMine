@@ -10,8 +10,8 @@ public class SpawnBlockWithInput : MonoBehaviour {
 
 	//get blockstates
 	private BlockState insec;
-	//private BlockState anx;
-	//private BlockState frust;
+	private BlockState anx;
+	private BlockState frust;
 	
 	private Renderer spawnPreview;
 	private PlayerState state;
@@ -25,8 +25,8 @@ public class SpawnBlockWithInput : MonoBehaviour {
 		cooldown = cooldownMax;
 		
 		insec = GameObject.Find("Block1_Insecurity").GetComponent<BlockState>();
-		//anx = GameObject.Find("Block2_Anxiety").GetComponent<BlockState>();
-		//frust = GameObject.Find("Block3_Frustration").GetComponent<BlockState>();
+		anx = GameObject.Find("Block2_Anxiety").GetComponent<BlockState>();
+		frust = GameObject.Find("Block3_Frustration").GetComponent<BlockState>();
 		
 		spawnPreview = GameObject.Find("SpawnPreview").GetComponent<Renderer>();
 		state = GameObject.Find("Player").GetComponent<PlayerState>();
@@ -60,6 +60,18 @@ public class SpawnBlockWithInput : MonoBehaviour {
 					insec.isSpawned = true;
 					cooldown = cooldownMax;
 				}
+				
+				//spawn block2
+				if(Input.GetButtonDown("Anx") && !Input.GetButton("Ability") && !anx.isSpawned && flags.hasAnx){
+					anx.isSpawned = true;
+					cooldown = cooldownMax;
+				}
+				
+				//spawn block3
+				if(Input.GetButtonDown("Frust") && !Input.GetButton("Ability") && !frust.isSpawned && flags.hasFrust){
+					frust.isSpawned = true;
+					cooldown = cooldownMax;
+				}
 
 			}
 		
@@ -74,6 +86,16 @@ public class SpawnBlockWithInput : MonoBehaviour {
 		/////////////
 		if(Input.GetButtonDown("Insec") && !Input.GetButton("Ability") && insec.isSpawned && cooldown==0){
 			insec.isSpawned = false;
+			cooldown = cooldownMax;
+		}
+		
+		if(Input.GetButtonDown("Anx") && !Input.GetButton("Ability") && anx.isSpawned && cooldown==0){
+			anx.isSpawned = false;
+			cooldown = cooldownMax;
+		}
+		
+		if(Input.GetButtonDown("Frust") && !Input.GetButton("Ability") && frust.isSpawned && cooldown==0){
+			frust.isSpawned = false;
 			cooldown = cooldownMax;
 		}
 		
