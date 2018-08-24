@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnHandler : MonoBehaviour {
 
+	private Vector3	temp;
+
 	private Animator animator; 
 	private BlockState state;
 	private Collider2D col;
@@ -26,10 +28,20 @@ public class SpawnHandler : MonoBehaviour {
 			state.exiled = false; 
 		}
 		
+		//alter the block on spawn-in
 		if(state.isSpawned && !state.snappedToPreview){
 			col.enabled = true;
 			rb.velocity = Vector3.zero;
 			gameObject.transform.position = sp.transform.position;
+			
+			//this is necessary since Insec block actually has a larger sprite size due to its ability!
+			if(state.shortName.Equals("Insec")){
+				temp = gameObject.transform.position;
+				temp.y = temp.y + (7f/16f);
+				gameObject.transform.position = temp;
+			}
+			
+			
 			state.snappedToPreview = true;
 			animator.SetBool("isSpawned", true);
 		}

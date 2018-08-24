@@ -5,6 +5,8 @@ using UnityEngine;
 public class InsecBlockGrowHandler : MonoBehaviour {
 
 	public bool big = false;
+	public bool biggified = false; 	//flag to see if hitbox changes on growth have been applied
+	private Vector2 temp;
 	private float originalMass; 
 	private BoxCollider2D hitbox; 
 	private Rigidbody2D rb; 
@@ -29,22 +31,45 @@ public class InsecBlockGrowHandler : MonoBehaviour {
 		//Value Modifiers
 		/////////////////
 		
-		if(big){
+		if(big && !biggified){
 			animator.SetBool("isBig", true);
 			
 			rb.mass = 20;
 			hitbox.size = new Vector2((30f/16f), (30f/16f));
+			
+			temp = hitbox.offset;
+			temp.y += (7f/16f);
+			hitbox.offset = temp;
+			
+			biggified = true;
 		}
 		
+		//in process of despawning
 		if(!state.isSpawned && big){
-			big = false;
-			hitbox.size = new Vector2(0.01f, (30f/16f));
+
+			hitbox.size = new Vector2((30f/16f), 0.01f);
+			hitbox.offset = new Vector2(0, -(30f/32f));
+			
 			animator.SetBool("isBig", false);
+			
+			big = false;
+			
 		}
 		
-		if(state.exiled){
+		//despawned
+		if(state.exiled && biggified){
 			rb.mass = originalMass;
+			
+			
+			temp = hitbox.offset;
+			temp.y -= (7f/16f);
+			hitbox.offset = temp;
+			
+			
 			hitbox.size = new Vector2(1,1);
+			hitbox.offset = new Vector2(0, -(7f/16f));	//was changed if despawned while big
+			
+			biggified = false;
 		}
 		
 		
