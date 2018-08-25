@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4158953544790154}
   - component: {fileID: 212209636634967914}
   - component: {fileID: 114400868749069008}
-  - component: {fileID: 114239620510669882}
   - component: {fileID: 95474359386766924}
   - component: {fileID: 58486037907084602}
+  - component: {fileID: 114527383947841868}
   m_Layer: 10
   m_Name: TentacleDoor
   m_TagString: Untagged
@@ -37,8 +37,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1940527432796456}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.706, y: -10.0704155, z: 0.5078125}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -48.013252, y: -5.9517193, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,17 +77,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114239620510669882
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1940527432796456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 582b7f4570065b041b3a56383162c203, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114400868749069008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +90,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pulse: 0
   pulseCooldownFrames: 2
+--- !u!114 &114527383947841868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1940527432796456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a03a5b4aef5d840805a3f071c5c5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invertBehavior: 0
 --- !u!212 &212209636634967914
 SpriteRenderer:
   m_ObjectHideFlags: 1

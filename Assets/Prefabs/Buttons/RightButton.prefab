@@ -57,8 +57,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1675103530996436}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 114.846, y: 1.928, z: 0.5019531}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 151.89, y: -3.5439281, z: 0.50642586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4383847761442890}
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1678778186005530}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.344, y: 0, z: 0}
+  m_LocalPosition: {x: 0.349, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4004431824145570}
@@ -167,7 +167,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.005711317, y: 0.2525864}
-  m_EdgeRadius: 0.06
+  m_EdgeRadius: 0.07
 --- !u!95 &95679430594007556
 Animator:
   serializedVersion: 3
@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sendsPulseTo: {fileID: 0}
-  isHoldButton: 1
-  pulse: 0
+  isHoldButton: 0
+  pulse: 1
 --- !u!114 &114512897728324596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -211,8 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f438f90413fb04eab34766d2756a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plateReference: {fileID: 0}
-  spring: {fileID: 0}
+  plateReference: {fileID: 50615080926488874}
+  spring: {fileID: 231827682979458404}
 --- !u!114 &114581145187149346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,7 +279,7 @@ SpringJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 50615080926488874}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0

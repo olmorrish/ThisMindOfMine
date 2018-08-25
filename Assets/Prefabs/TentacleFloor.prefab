@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4001927774691308}
   - component: {fileID: 212167040058097774}
   - component: {fileID: 114682136292741412}
-  - component: {fileID: 114759135549505386}
   - component: {fileID: 95784369844979158}
   - component: {fileID: 58414039960730122}
+  - component: {fileID: 114043695052909716}
   m_Layer: 10
   m_Name: TentacleFloor
   m_TagString: Untagged
@@ -37,8 +37,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1190979753026586}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.702526, y: 2.966745, z: 0.5078125}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 48.67929, y: 3.666883, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,6 +77,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114043695052909716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1190979753026586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a03a5b4aef5d840805a3f071c5c5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invertBehavior: 0
 --- !u!114 &114682136292741412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,17 +102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pulse: 0
   pulseCooldownFrames: 2
---- !u!114 &114759135549505386
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1190979753026586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 582b7f4570065b041b3a56383162c203, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212167040058097774
 SpriteRenderer:
   m_ObjectHideFlags: 1
