@@ -13,13 +13,13 @@ public class AnxBlockMovement : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	private BlockState state;
-	private Collider2D col;
+	//private Collider2D col;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		state = GetComponent<BlockState>();
-		col = GetComponent<Collider2D>();
+		//col = GetComponent<Collider2D>();
 	}
 	
 	void OnCollisionEnter(){

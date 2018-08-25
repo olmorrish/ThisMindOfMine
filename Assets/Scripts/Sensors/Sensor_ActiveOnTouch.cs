@@ -27,6 +27,11 @@ public class Sensor_ActiveOnTouch : MonoBehaviour {
 		//collisionStay = true;
 	}
 	
+	void OnCollisionStay2D(Collision2D col){
+		pulse = true;
+		//collisionStay = true;
+	}
+	
 	void OnCollisionExit2D(Collision2D col){
 		if(isHoldButton){
 			pulse = false;
@@ -40,6 +45,9 @@ public class Sensor_ActiveOnTouch : MonoBehaviour {
 		
 		if(pulse && sendsPulseTo != null){
 			antenna.pulse = true;
+		}
+		else if(!pulse && sendsPulseTo !=null){
+			antenna.pulse = false;
 		}
 	}
 }

@@ -7,14 +7,14 @@ public class DespawnAndExileHandler : MonoBehaviour {
 	private Animator animator; 
 	private BlockState state;
 	private Collider2D col;
-	private GameObject sp;
+	//private GameObject sp;
 
 	// Use this for initialization
 	void Awake () {
 		animator = GetComponent<Animator>();
 		state = GetComponent<BlockState>();
 		col = GetComponent<Collider2D>();
-		sp = GameObject.Find("SpawnPreview");
+		//sp = GameObject.Find("SpawnPreview");
 	}
 	
 	// Update is called once per frame

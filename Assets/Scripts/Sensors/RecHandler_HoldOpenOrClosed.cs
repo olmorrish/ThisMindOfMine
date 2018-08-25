@@ -17,17 +17,20 @@ public class RecHandler_HoldOpenOrClosed : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if(!invertBehavior){
-			if(rec.pulse == true){
-				//TODO: finish, only animation
-				animator.SetBool("isLocked", false);
-				GetComponent<Collider2D>().enabled = false;
-			}
+		if(rec.pulse == true){
+			animator.SetBool("isLocked", false);
+			GetComponent<Collider2D>().enabled = false;
+		}
+		
+		else{
+			animator.SetBool("isLocked", true);
+			GetComponent<Collider2D>().enabled = true;
+		}
 			
-			else{
-				animator.SetBool("isLocked", true);
-				GetComponent<Collider2D>().enabled = true;
-			}
+		/*
+		
+		if(!invertBehavior){
+			
 		}
 		
 		else{
@@ -43,7 +46,7 @@ public class RecHandler_HoldOpenOrClosed : MonoBehaviour {
 			}
 
 		}
-		
+		*/
 		
 		
 	}
