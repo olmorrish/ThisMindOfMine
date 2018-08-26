@@ -10,6 +10,12 @@ public class GameStateFlags : MonoBehaviour {
 	public bool hasFrust = true;
 	
 	public int numMemories = 0;
+	
+	public GameObject lastRespawnPoint;
+
+	void Awake(){
+		lastRespawnPoint = null;
+	}	
 
 
 }
