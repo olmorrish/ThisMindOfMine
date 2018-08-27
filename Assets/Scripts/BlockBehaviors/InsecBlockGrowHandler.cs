@@ -53,7 +53,6 @@ public class InsecBlockGrowHandler : MonoBehaviour {
 			animator.SetBool("isBig", false);
 			
 			big = false;
-			
 		}
 		
 		//despawned

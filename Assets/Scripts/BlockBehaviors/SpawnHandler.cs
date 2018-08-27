@@ -41,7 +41,6 @@ public class SpawnHandler : MonoBehaviour {
 				gameObject.transform.position = temp;
 			}
 			
-			
 			state.snappedToPreview = true;
 			animator.SetBool("isSpawned", true);
 		}

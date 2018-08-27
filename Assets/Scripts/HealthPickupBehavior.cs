@@ -11,9 +11,7 @@ public class HealthPickupBehavior : MonoBehaviour {
 	
 	public int cooldownMax = 900;
 	public int cooldown;
-	bool onCD = false;
 	
-	private GameStateFlags gameState;
 	private PlayerState playerState;
 
 	// Use this for initialization
@@ -24,8 +22,7 @@ public class HealthPickupBehavior : MonoBehaviour {
 		backdropAnimator = gameObject.transform.Find("TransparentBackdrop").GetComponent<Animator>();
 		
 		cooldown = 0;
-		
-		gameState = GameObject.Find("GameState").GetComponent<GameStateFlags>();
+
 		playerState = GameObject.Find("Player").GetComponent<PlayerState>();
 	}
 	

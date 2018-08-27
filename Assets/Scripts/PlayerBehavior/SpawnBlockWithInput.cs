@@ -13,7 +13,9 @@ public class SpawnBlockWithInput : MonoBehaviour {
 	private BlockState anx;
 	private BlockState frust;
 	
-	private Renderer spawnPreview;
+	private GameObject spawnPreview;
+	private SpawnPreviewBehavior spBehaviorScript;
+	private Renderer spPreviewRend;
 	private PlayerState state;
 	private Collider2D previewHitbox; 
 	
@@ -28,9 +30,11 @@ public class SpawnBlockWithInput : MonoBehaviour {
 		anx = GameObject.Find("Block2_Anxiety").GetComponent<BlockState>();
 		frust = GameObject.Find("Block3_Frustration").GetComponent<BlockState>();
 		
-		spawnPreview = GameObject.Find("SpawnPreview").GetComponent<Renderer>();
+		spawnPreview = GameObject.Find("SpawnPreview");
+		spBehaviorScript = spawnPreview.GetComponent<SpawnPreviewBehavior>();
+		spPreviewRend = spawnPreview.GetComponent<Renderer>();
 		state = GameObject.Find("Player").GetComponent<PlayerState>();
-		previewHitbox = GameObject.Find("SpawnPreview").GetComponent<Collider2D>();
+		previewHitbox = spawnPreview.GetComponent<Collider2D>();
 		
 		flags = GameObject.Find("GameState").GetComponent<GameStateFlags>();
 	}
@@ -51,24 +55,24 @@ public class SpawnBlockWithInput : MonoBehaviour {
 		///////////
 		if(Input.GetButton("Spawn") && state.onGround && flags.canSpawnBlocks){
 			
-			spawnPreview.enabled = true;	//can see the preview 
+			spPreviewRend.enabled = true;	//can see the preview 
 			
-			if(cooldown == 0){
+			if(cooldown == 0 && !spBehaviorScript.overlap){
 				
 				//spawn block1
-				if(Input.GetButtonDown("Insec") && !Input.GetButton("Ability") && !insec.isSpawned && flags.hasInsec){
+				if(Input.GetButtonDown("Insec") && !Input.GetButton("Ability") && !insec.isSpawned && insec.exiled && flags.hasInsec){
 					insec.isSpawned = true;
 					cooldown = cooldownMax;
 				}
 				
 				//spawn block2
-				if(Input.GetButtonDown("Anx") && !Input.GetButton("Ability") && !anx.isSpawned && flags.hasAnx){
+				if(Input.GetButtonDown("Anx") && !Input.GetButton("Ability") && !anx.isSpawned && anx.exiled && flags.hasAnx){
 					anx.isSpawned = true;
 					cooldown = cooldownMax;
 				}
 				
 				//spawn block3
-				if(Input.GetButtonDown("Frust") && !Input.GetButton("Ability") && !frust.isSpawned && flags.hasFrust){
+				if(Input.GetButtonDown("Frust") && !Input.GetButton("Ability") && !frust.isSpawned && frust.exiled && flags.hasFrust){
 					frust.isSpawned = true;
 					cooldown = cooldownMax;
 				}
@@ -78,26 +82,32 @@ public class SpawnBlockWithInput : MonoBehaviour {
 			
 		}
 		else{
-			spawnPreview.enabled = false;
+			spPreviewRend.enabled = false;
 		}
 		
 		/////////////
 		// DESPAWN //
 		/////////////
-		if(Input.GetButtonDown("Insec") && !Input.GetButton("Ability") && insec.isSpawned && cooldown==0){
+		
+		if(cooldown==0){
+			
+			if(Input.GetButtonDown("Insec") && !Input.GetButton("Ability") && insec.isSpawned){
 			insec.isSpawned = false;
 			cooldown = cooldownMax;
+			}
+			
+			if(Input.GetButtonDown("Anx") && !Input.GetButton("Ability") && anx.isSpawned){
+				anx.isSpawned = false;
+				cooldown = cooldownMax;
+			}
+			
+			if(Input.GetButtonDown("Frust") && !Input.GetButton("Ability") && frust.isSpawned){
+				frust.isSpawned = false;
+				cooldown = cooldownMax;
+			}
 		}
 		
-		if(Input.GetButtonDown("Anx") && !Input.GetButton("Ability") && anx.isSpawned && cooldown==0){
-			anx.isSpawned = false;
-			cooldown = cooldownMax;
-		}
 		
-		if(Input.GetButtonDown("Frust") && !Input.GetButton("Ability") && frust.isSpawned && cooldown==0){
-			frust.isSpawned = false;
-			cooldown = cooldownMax;
-		}
 		
 	}
 }

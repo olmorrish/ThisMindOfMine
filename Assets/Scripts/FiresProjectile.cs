@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class FiresProjectile : MonoBehaviour {
 
-	public int fireRate = 48;
-	public int offset = 16;
+	public int offset = 0;
 	public GameObject projectile;
 	private Vector3 spawnloc;
 	public float spawnLocationOffset;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
-		offset = 0;
 		spawnloc = new Vector3(transform.position.x + spawnLocationOffset, transform.position.y, 0);
+		animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/*
-		offset += 1;
-		
-		if(offset == fireRate){
-			offset = 0;
-			
-			GameObject projectileClone = (GameObject) Instantiate(projectile, spawnloc, transform.rotation);
+		if(offset>0){
+			offset -= 1;
+		}
+		else{
+			animator.SetBool("firing", true);
 		}
 		
-		*/
+
 		
 	}
 	
