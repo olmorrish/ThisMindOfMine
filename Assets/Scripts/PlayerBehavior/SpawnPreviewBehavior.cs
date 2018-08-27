@@ -10,19 +10,14 @@ public class SpawnPreviewBehavior : MonoBehaviour {
 	private GameObject player;
 	private PlayerState state;
 	
-	
 	// Use this for initialization
 	void Awake () {
 		isRight = true;
 		overlap = false;
 		player = GameObject.Find("Player");
 		state = player.GetComponent<PlayerState>();
-
 	}
 
-	
-	
-	
 	
 	void OnCollisionEnter2D(Collision2D col){
 		overlap = true;
@@ -37,6 +32,8 @@ public class SpawnPreviewBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {		
+	
+		
 		
 		if(Input.GetAxis("Horizontal")<0 && isRight && state.onGround){
 			//gameObject.transform.Translate(-(23f/16f),0,0);
@@ -54,7 +51,7 @@ public class SpawnPreviewBehavior : MonoBehaviour {
 		else{
 			transform.position = new Vector3(player.transform.position.x - (11.5f/16f), player.transform.position.y + + (3f/16f), 0);
 		}
-		
+
 	}
 	
 }

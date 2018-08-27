@@ -4,6 +4,7 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: blockspawn_preview_0
     21300002: blockspawn_preview_1
+    21300004: blockspawn_preview_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -122,7 +123,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6dc5471878902a144880e68524f9c1b2
+      spriteID: 4ee325ed631e8604d87a612c67a218df
       vertices: []
       indices: 
       edges: []
@@ -142,7 +143,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c79bae683ca3af479ff246d078e17f6
+      spriteID: a4de02ba2bfffd94a901408883ffae32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blockspawn_preview_2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c531cb0aff4f2ab48ac2eb173cf25061
       vertices: []
       indices: 
       edges: []

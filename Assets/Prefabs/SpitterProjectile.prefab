@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114769034689503070}
   - component: {fileID: 114092609267379154}
   - component: {fileID: 95266733180135724}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: SpitterProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1118522513105146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89.86996, y: 12.902863, z: -0.048958063}
+  m_LocalPosition: {x: 92.937065, y: 13.393627, z: -0.048958063}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
