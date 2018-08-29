@@ -22,8 +22,8 @@ TagManager:
   - Button
   - HiddenBoxTriggers
   - Projectile
-  - 
-  - 
+  - PlayerBlocker
+  - AnxResetter
   - 
   - 
   - 

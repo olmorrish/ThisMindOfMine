@@ -14,33 +14,51 @@ public class AnxBlockMovement : MonoBehaviour {
 	private Rigidbody2D rb;
 	private BlockState state;
 	//private Collider2D col;
+	
+	private AnxReset resetter;
+	public bool canMove = true;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		state = GetComponent<BlockState>();
-		//col = GetComponent<Collider2D>();
+		resetter = GameObject.Find("AnxResetter").GetComponent<AnxReset>();
 	}
 	
-	void OnCollisionEnter(){
-		rb.velocity = Vector3.zero;
+	public void ResetAnx(){
 		uplock = false;
 		downlock = false;
 		rightlock = false;
 		leftlock = false;
+		
+		canMove = true;
 	}
-	
+
 	
 	// Update is called once per frame
 	void Update () {
 		
-		if(state.isSpawned){
+		if(!state.isSpawned){
+			rb.velocity = Vector3.zero;
+				uplock = false;
+				downlock = false;
+				rightlock = false;
+				leftlock = false;
+				
+				canMove = true;
+				resetter.Center();
+		}
+		
+		if(state.isSpawned && canMove){
 			if(Input.GetAxis("VerticalRS")>0){
 				rb.velocity = Vector3.zero;
 				uplock = true;
 				downlock = false;
 				rightlock = false;
 				leftlock = false;
+				
+				canMove = false;
+				resetter.Up();
 			}
 			else if(Input.GetAxis("VerticalRS")<0){
 				rb.velocity = Vector3.zero;
@@ -48,6 +66,9 @@ public class AnxBlockMovement : MonoBehaviour {
 				downlock = true;
 				rightlock = false;
 				leftlock = false;
+				
+				canMove = false;
+				resetter.Down();
 			}
 			else if(Input.GetAxis("HorizontalRS")>0){
 				rb.velocity = Vector3.zero;
@@ -55,6 +76,9 @@ public class AnxBlockMovement : MonoBehaviour {
 				downlock = false;
 				rightlock = true;
 				leftlock = false;
+				
+				canMove = false;
+				resetter.Right();
 			}
 			else if(Input.GetAxis("HorizontalRS")<0){
 				rb.velocity = Vector3.zero;
@@ -62,6 +86,9 @@ public class AnxBlockMovement : MonoBehaviour {
 				downlock = false;
 				rightlock = false;
 				leftlock = true;
+				
+				canMove = false;
+				resetter.Left();
 			}
 		}
 		
