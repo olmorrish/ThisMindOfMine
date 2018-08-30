@@ -9,15 +9,22 @@ public class FiresProjectile : MonoBehaviour {
 	private Vector3 spawnloc;
 	public float spawnLocationOffset;
 	private Animator animator;
+	public bool rapidFire = false;
 
 	// Use this for initialization
 	void Start () {
 		spawnloc = new Vector3(transform.position.x + spawnLocationOffset, transform.position.y, 0);
 		animator = GetComponent<Animator>();
+		if(rapidFire){
+			animator.SetBool("rapidFire", true);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+		
+		
 		if(offset>0){
 			offset -= 1;
 		}
