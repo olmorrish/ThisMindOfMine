@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class LeaperBaseLands : MonoBehaviour {
 
-	public LeaperBehavior parentLeaper;
+	private LeaperBehavior parentLeaper;
+	private Animator animator;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		parentLeaper = transform.parent.GetComponent<LeaperBehavior>();
+		animator = transform.parent.GetComponent<Animator>();
 	}
 	
 	void OnCollisionEnter2D (Collision2D col) {
+		animator.SetBool("onGround", true);
 		parentLeaper.Land();
+		parentLeaper.onGround = true;
 	}
 }
