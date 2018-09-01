@@ -39,6 +39,7 @@ public class LeaperBehavior : MonoBehaviour {
 		rb.AddForce(jumpVector * jumpForce, ForceMode2D.Impulse);
 		animator.SetBool("woundUp", false);
 		animator.SetBool("onGround", false);
+		animator.SetBool("flipping", false);
 		onGround = false;
 	}
 	
@@ -59,6 +60,10 @@ public class LeaperBehavior : MonoBehaviour {
 		facingLeft = !facingLeft;
 		
 		rend.flipX = !(rend.flipX);
+	}
+	
+	public void FlipOff(){
+		animator.SetBool("flipping", false);
 	}
 	
 }

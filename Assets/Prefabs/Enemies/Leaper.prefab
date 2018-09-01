@@ -72,7 +72,7 @@ Transform:
   m_GameObject: {fileID: 1706719966876058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -25.44, y: 38.65, z: -0.29296875}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 4775221837593312}
   m_Father: {fileID: 0}
@@ -106,7 +106,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1339269043070354}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 83aee3e440821cd4f902b715b472f5cf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -121,8 +121,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.90065926, y: 0.11698401}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.90065926, y: 0.06}
+  m_EdgeRadius: 0.03
 --- !u!61 &61834772764789064
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03436327, y: -0.040830433}
+  m_Offset: {x: 0.0006453991, y: -0.12355614}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -146,7 +146,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1187735, y: 0.65198004}
+  m_Size: {x: 1.0609365, y: 0.3112316}
   m_EdgeRadius: 0
 --- !u!95 &95079773654597500
 Animator:
@@ -223,8 +223,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onGround: 1
   facingLeft: 1
-  jumpVector: {x: -1, y: 1.2, z: 0}
-  jumpForce: 5
+  jumpVector: {x: -1.5, y: 1.6, z: 0}
+  jumpForce: 3
 --- !u!212 &212327739746991300
 SpriteRenderer:
   m_ObjectHideFlags: 1
