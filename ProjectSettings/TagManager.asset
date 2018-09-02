@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Level
   - Block
+  - Skilift
   layers:
   - Default
   - TransparentFX
