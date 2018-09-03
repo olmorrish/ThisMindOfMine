@@ -5,6 +5,7 @@ using UnityEngine;
 public class FollowsPlayer : MonoBehaviour {
 
 	private Rigidbody2D rb;
+	public float detectionRange = 5f; 
 	
 	private Vector2 rayDirection;
 	private RaycastHit2D hit;
@@ -26,7 +27,7 @@ public class FollowsPlayer : MonoBehaviour {
 		moveTo = player.transform.position - transform.position;
 		
 		
-		if(Vector3.Distance(player.transform.position, transform.position) < 5){
+		if(Vector3.Distance(player.transform.position, transform.position) < detectionRange){
 			
 			animator.SetBool("isActive", true);
 			
@@ -35,20 +36,20 @@ public class FollowsPlayer : MonoBehaviour {
 			
 			if(rb.velocity.y == 0f){
 				if(player.transform.position.y > transform.position.y){
-					rb.AddForce(new Vector3(0,5f,0), ForceMode2D.Force);
+					rb.AddForce(new Vector3(0,10f,0), ForceMode2D.Force);
 				}
 				else{
-					rb.AddForce(new Vector3(0,-5f,0), ForceMode2D.Force);
+					rb.AddForce(new Vector3(0,-10f,0), ForceMode2D.Force);
 				}
 				
 			}
 			
 			if(rb.velocity.x == 0f){
 				if(player.transform.position.x > transform.position.x){
-					rb.AddForce(new Vector3(5f,0,0), ForceMode2D.Force);
+					rb.AddForce(new Vector3(10f,0,0), ForceMode2D.Force);
 				}
 				else{
-					rb.AddForce(new Vector3(-5f,0,0), ForceMode2D.Force);
+					rb.AddForce(new Vector3(-10f,0,0), ForceMode2D.Force);
 				}
 			}
 		
