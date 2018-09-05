@@ -41,6 +41,13 @@ public class SpawnHandler : MonoBehaviour {
 				gameObject.transform.position = temp;
 			}
 			
+			//this is necessary since Frust block ALSO has a larger sprite size due to its ability
+			if(state.shortName.Equals("Frust")){
+				temp = gameObject.transform.position;
+				temp.y = temp.y + (3f/16f);
+				gameObject.transform.position = temp;
+			}
+			
 			state.snappedToPreview = true;
 			animator.SetBool("isSpawned", true);
 		}
