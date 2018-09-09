@@ -79,4 +79,10 @@ public class FollowsPlayer : MonoBehaviour {
 		
 		return true;
 	}
+	
+	//gizmo to indicate radius in which the enemy will follow the player
+	private void OnDrawGizmos(){
+		Gizmos.color = new Color(0,0,1,0.25f);
+		Gizmos.DrawSphere(transform.position, detectionRange);
+	}
 }
