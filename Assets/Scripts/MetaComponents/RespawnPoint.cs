@@ -16,10 +16,16 @@ public class RespawnPoint : MonoBehaviour {
 		gameStateFlags = GameObject.Find("GameState").GetComponent<GameStateFlags>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if(myCol.IsTouching(playerCol)){
+	void OnTriggerEnter2D(Collider2D col){
+		if(col.gameObject.tag.Equals("Player")){
 			gameStateFlags.lastRespawnPoint = this.gameObject;
+			Debug.Log("Setting respawn point to: " + gameObject.name);
 		}
+	}
+	
+	
+	private void OnDrawGizmos(){
+		Gizmos.color = new Color(1,0.2f,0,0.4f);
+		Gizmos.DrawCube(transform.position, new Vector3(1.5f, 1.5f, 1));
 	}
 }

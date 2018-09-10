@@ -28,12 +28,14 @@ public class Respawn : MonoBehaviour {
 			
 			if(gameState.lastRespawnPoint != null){
 				gameObject.transform.position = gameState.lastRespawnPoint.transform.position;
+				gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 				playerState.health = 3;
-				spawned = true;
 			}
 			else{
 				Debug.Log("FATAL ERROR: Player has nowhere to spawn!");
 			}
+			
+			spawned = true;
 		}
 	}
 }
