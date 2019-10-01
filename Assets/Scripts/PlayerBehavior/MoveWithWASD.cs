@@ -35,7 +35,7 @@ public class MoveWithWASD : MonoBehaviour {
 		// Vertical Player Movement
 		///////////////////////////
 
-		if(Input.GetButton("Jump") && !state.grabbing){	//cannot jump if grabbing!
+		if(Input.GetButton("Jump") && !state.grabbing){	//cannot jump if grabbing! 
 			
 			//begin to jump condition
 			if(state.onGround && playerRB.velocity.y > -0.01){
