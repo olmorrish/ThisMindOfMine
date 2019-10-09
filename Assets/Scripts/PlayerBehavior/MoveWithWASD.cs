@@ -6,7 +6,7 @@ public class MoveWithWASD : MonoBehaviour {
 
 	//customizable values
 	public float jumpForce = 2f;
-	public float continuousJumpForce = 0.7f;	//force added by holding down the button
+	public float continuousJumpForce = 0.7f;	    //force added by holding down the button
 	public float continuousJumpDecay = 0.001f;
 	public float horizontalForce = 12f;
 	public float airControlDecay = 0.001f;
@@ -35,8 +35,8 @@ public class MoveWithWASD : MonoBehaviour {
 		// Vertical Player Movement
 		///////////////////////////
 
-		if(Input.GetButton("Jump") && !state.grabbing){	//cannot jump if grabbing! 
-			
+		if(Input.GetButton("Jump") || Input.GetKey("w") || Input.GetKey(KeyCode.Space)){	 
+		
 			//begin to jump condition
 			if(state.onGround && playerRB.velocity.y > -0.01){
 				playerRB.AddForce(new Vector3(0, 1.0f, 0) * jumpForce, ForceMode2D.Impulse);
@@ -74,16 +74,17 @@ public class MoveWithWASD : MonoBehaviour {
 		/////////////////////////////
 		// Horizontal Player Movement
 		/////////////////////////////
-		if(Input.GetAxis("Horizontal")>0 && !state.onGround){
+        
+		if((Input.GetAxis("Horizontal")>0 || Input.GetKey("d")) && !state.onGround){
 			playerRB.AddForce((new Vector3(1, 0, 0)) * horizontalForce * airControlMultiplier, ForceMode2D.Force);
 		}
-		else if(Input.GetAxis("Horizontal")>0){
+		else if (Input.GetAxis("Horizontal") > 0 || Input.GetKey("d")){
 			playerRB.AddForce((new Vector3(1, 0, 0)) * horizontalForce, ForceMode2D.Force);
 		}
-		if(Input.GetAxis("Horizontal")<0 && !state.onGround){
+		if((Input.GetAxis("Horizontal")<0 || Input.GetKey("a")) && !state.onGround){
 			playerRB.AddForce((new Vector3(-1, 0, 0)) * horizontalForce * airControlMultiplier, ForceMode2D.Force);
 		}
-		else if(Input.GetAxis("Horizontal")<0){
+		else if (Input.GetAxis("Horizontal") < 0 || Input.GetKey("a")){
 			playerRB.AddForce((new Vector3(-1, 0, 0)) * horizontalForce, ForceMode2D.Force);
 		}
 		
@@ -91,6 +92,7 @@ public class MoveWithWASD : MonoBehaviour {
 		if(Input.GetKey("d") && !state.onGround){
 			playerRB.AddForce((new Vector3(1, 0, 0)) * horizontalForce * airControlMultiplier, ForceMode2D.Force);
 		}
+
 		else if(Input.GetKey("d")){
 			playerRB.AddForce((new Vector3(1, 0, 0)) * horizontalForce, ForceMode2D.Force);
 		}

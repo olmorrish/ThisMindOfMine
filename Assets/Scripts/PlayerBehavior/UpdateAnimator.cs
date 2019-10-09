@@ -28,7 +28,7 @@ public class UpdateAnimator : MonoBehaviour {
 		
 		animator.SetFloat("HorizontalVelocity", playerRB.velocity.x);
 		animator.SetBool("Jumping", !(state.onGround));
-		animator.SetBool("Grabbing", state.grabbing);
+		//animator.SetBool("Grabbing", state.grabbing);
 		
 		healthAnimator.SetInteger("healthCount", state.health);
 	}

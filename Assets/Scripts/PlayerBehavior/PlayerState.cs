@@ -6,7 +6,6 @@ public class PlayerState : MonoBehaviour {
 
 	public bool onGround;		 
 	public bool jumpHeldDown;
-	public bool grabbing;
 	
 	public int health = 3;
 	public int damageCooldownFrames = 75;
@@ -17,7 +16,6 @@ public class PlayerState : MonoBehaviour {
 	void Awake () {
 		onGround = false;
 		jumpHeldDown = false;
-		grabbing = false;
 		damageCooldownActive = false;
 		damageCooldownFramesRemaining = damageCooldownFrames;
 	}
@@ -56,7 +54,7 @@ public class PlayerState : MonoBehaviour {
 			//apply a knockback with an upwards force
 			GetComponent<Rigidbody2D>().AddForce(new Vector3(knockback, 2.0f, 0) * GetComponent<MoveWithWASD>().jumpForce, ForceMode2D.Impulse);
 		
-			//restrict midair movement
+			//restrict midair movement to prevent abuse of knockback on damage
 			onGround = false;
 			GetComponent<MoveWithWASD>().airControlMultiplier = 0;
 		}
