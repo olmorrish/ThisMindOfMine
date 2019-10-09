@@ -25,11 +25,12 @@ public class SpawnPreviewErrorHandler : MonoBehaviour {
 	void Update () {
 		
 		//error flash animation trigger and disable
-		spanim.SetBool("errorFlash", false);	//otherwise it goes forever
+		spanim.SetBool("errorFlash", false);	    //otherwise it goes forever!
 		
 		if(spb.overlap && Input.GetButton("Spawn")){
-
-			if((Input.GetButtonDown("Insec") && !insec.isSpawned) || (Input.GetButtonDown("Anx") && !anx.isSpawned) || (Input.GetButtonDown("Frust") && !frust.isSpawned)){
+			if((Input.GetButtonDown("Insec") && !insec.isSpawned) 
+                || (Input.GetButtonDown("Anx") && !anx.isSpawned) 
+                || (Input.GetButtonDown("Frust") && !frust.isSpawned)){
 			
 				spanim.SetBool("errorFlash", true);
 			}

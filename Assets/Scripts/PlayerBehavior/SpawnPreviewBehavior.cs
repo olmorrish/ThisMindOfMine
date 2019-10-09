@@ -32,18 +32,19 @@ public class SpawnPreviewBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {		
-	
-		
-		
-		if(Input.GetAxis("Horizontal")<0 && isRight && state.onGround){
+
+		if((Input.GetAxis("Horizontal")<0 || Input.GetKey("a")) && isRight && state.onGround){
 			//gameObject.transform.Translate(-(23f/16f),0,0);
 			isRight = false;
 		}
-		else if(Input.GetAxis("Horizontal")>0 && !isRight && state.onGround){
+		else if((Input.GetAxis("Horizontal")>0 || Input.GetKey("d")) && !isRight && state.onGround){
 			//gameObject.transform.Translate((23f/16f),0,0);
 			isRight = true;
 		}
 
+        /////////////////////
+        // Movement Functions
+        /////////////////////
 		
 		if(isRight){
 			transform.position = new Vector3(player.transform.position.x + (11.5f/16f), player.transform.position.y + (3f/16f), 0);

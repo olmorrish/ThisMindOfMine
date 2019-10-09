@@ -49,37 +49,45 @@ public class SpawnBlockWithInput : MonoBehaviour {
 		if(cooldown < 0){
 			cooldown = 0;
 		}
-		
-		///////////
-		// SPAWN //
-		///////////
-		if(Input.GetButton("Spawn") && state.onGround && flags.canSpawnBlocks){
-			
-			spPreviewRend.enabled = true;	//can see the preview 
-			
-			if(cooldown == 0 && !spBehaviorScript.overlap){
-				
-				//spawn block1
-				if(Input.GetButtonDown("Insec") && !Input.GetButton("Ability") && !insec.isSpawned && insec.exiled && flags.hasInsec){
-					insec.isSpawned = true;
+
+        ///////////
+        // SPAWN //
+        ///////////
+        if ((Input.GetButton("Spawn") || Input.GetKey("s") || Input.GetKey("e")) && state.onGround && flags.canSpawnBlocks) {
+
+            //player can see the Spawn Preview of where the block will spawn
+            spPreviewRend.enabled = true;   
+
+            
+            if (cooldown == 0 && !spBehaviorScript.overlap) {
+
+                //each block checks that their secondary ability key is not also held down (q or right bumper)
+                //spawn block1
+                if ((Input.GetButtonDown("Insec") && !Input.GetButton("Ability")) || (Input.GetKeyDown("1") && !Input.GetKeyDown("q"))
+                    && !insec.isSpawned && insec.exiled && flags.hasInsec){
+
+                    insec.isSpawned = true;
 					cooldown = cooldownMax;
 				}
 				
 				//spawn block2
-				if(Input.GetButtonDown("Anx") && !Input.GetButton("Ability") && !anx.isSpawned && anx.exiled && flags.hasAnx){
-					anx.isSpawned = true;
+				if((Input.GetButtonDown("Anx") && !Input.GetButton("Ability")) || (Input.GetKeyDown("2") && !Input.GetKeyDown("q"))
+                    && !anx.isSpawned && anx.exiled && flags.hasAnx){
+
+                    anx.isSpawned = true;
 					cooldown = cooldownMax;
 				}
 				
 				//spawn block3
-				if(Input.GetButtonDown("Frust") && !Input.GetButton("Ability") && !frust.isSpawned && frust.exiled && flags.hasFrust){
-					frust.isSpawned = true;
+				if((Input.GetButtonDown("Frust") && !Input.GetButton("Ability")) || (Input.GetKeyDown("3") && !Input.GetKeyDown("q"))
+                    && !frust.isSpawned && frust.exiled && flags.hasFrust){
+
+                    frust.isSpawned = true;
 					cooldown = cooldownMax;
 				}
 
 			}
-		
-			
+
 		}
 		else{
 			spPreviewRend.enabled = false;
@@ -91,17 +99,26 @@ public class SpawnBlockWithInput : MonoBehaviour {
 		
 		if(cooldown==0){
 			
-			if(Input.GetButtonDown("Insec") && !Input.GetButton("Ability") && insec.isSpawned){
-			insec.isSpawned = false;
-			cooldown = cooldownMax;
+			if((Input.GetButtonDown("Insec") && !Input.GetButton("Ability")) 
+                || (Input.GetKeyDown("1") && !Input.GetKeyDown("q")) 
+                && insec.isSpawned){
+
+                insec.isSpawned = false;
+			    cooldown = cooldownMax;
 			}
 			
-			if(Input.GetButtonDown("Anx") && !Input.GetButton("Ability") && anx.isSpawned){
-				anx.isSpawned = false;
+			if((Input.GetButtonDown("Anx") && !Input.GetButton("Ability"))
+                || (Input.GetKeyDown("2") && !Input.GetKeyDown("q"))
+                && anx.isSpawned){
+
+                anx.isSpawned = false;
 				cooldown = cooldownMax;
 			}
 			
-			if(Input.GetButtonDown("Frust") && !Input.GetButton("Ability") && frust.isSpawned){
+			if((Input.GetButtonDown("Frust") && !Input.GetButton("Ability"))
+                || (Input.GetKeyDown("3") && !Input.GetKeyDown("q"))
+                && frust.isSpawned){
+
 				frust.isSpawned = false;
 				cooldown = cooldownMax;
 			}
