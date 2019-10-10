@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Changes the player's State when the foot hitbox collides with the ground
+ */
 public class FootCollisionResetJump : MonoBehaviour {
 
 	public GameObject playerObjReference;

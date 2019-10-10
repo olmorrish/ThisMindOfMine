@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Input handler for all player attempts to spawn blocks
+ */
 public class SpawnBlockWithInput : MonoBehaviour {
 	
 	//spawn & despawn cooldown
@@ -53,44 +55,50 @@ public class SpawnBlockWithInput : MonoBehaviour {
         ///////////
         // SPAWN //
         ///////////
-        if ((Input.GetButton("Spawn") || Input.GetKey("s") || Input.GetKey("e")) && state.onGround && flags.canSpawnBlocks) {
+        if ((Input.GetButton("Spawn") || Input.GetKey("e")) && state.onGround && flags.canSpawnBlocks) {
 
-            //player can see the Spawn Preview of where the block will spawn
+            //button is held down, so player can see the Spawn Preview of where the block will spawn
             spPreviewRend.enabled = true;   
 
-            
             if (cooldown == 0 && !spBehaviorScript.overlap) {
 
                 //each block checks that their secondary ability key is not also held down (q or right bumper)
                 //spawn block1
-                if ((Input.GetButtonDown("Insec") && !Input.GetButton("Ability")) || (Input.GetKeyDown("1") && !Input.GetKeyDown("q"))
-                    && !insec.isSpawned && insec.exiled && flags.hasInsec){
+                if ((Input.GetButtonDown("Insec") && !Input.GetButton("Ability")) 
+                    || (Input.GetKeyDown("1") && !Input.GetKey("q"))){
 
-                    insec.isSpawned = true;
-					cooldown = cooldownMax;
+                    if (!insec.isSpawned && insec.exiled && flags.hasInsec) {
+                        insec.isSpawned = true;
+                        cooldown = cooldownMax;
+                    }
 				}
 				
 				//spawn block2
-				if((Input.GetButtonDown("Anx") && !Input.GetButton("Ability")) || (Input.GetKeyDown("2") && !Input.GetKeyDown("q"))
-                    && !anx.isSpawned && anx.exiled && flags.hasAnx){
+				if ((Input.GetButtonDown("Anx") && !Input.GetButton("Ability")) 
+                    || (Input.GetKeyDown("2") && !Input.GetKey("q"))){
 
-                    anx.isSpawned = true;
-					cooldown = cooldownMax;
+                    if (!anx.isSpawned && anx.exiled && flags.hasAnx) {
+                        anx.isSpawned = true;
+                        cooldown = cooldownMax;
+                    }
 				}
-				
-				//spawn block3
-				if((Input.GetButtonDown("Frust") && !Input.GetButton("Ability")) || (Input.GetKeyDown("3") && !Input.GetKeyDown("q"))
-                    && !frust.isSpawned && frust.exiled && flags.hasFrust){
 
-                    frust.isSpawned = true;
-					cooldown = cooldownMax;
-				}
+                //spawn block3
+                if (((Input.GetButtonDown("Frust") && !Input.GetButton("Ability"))
+                    || (Input.GetKeyDown("3") && !Input.GetKey("q")))){
+
+                    if (!frust.isSpawned && frust.exiled && flags.hasFrust) {
+
+                        frust.isSpawned = true;
+                        cooldown = cooldownMax;
+                    }
+                }
 
 			}
 
 		}
 		else{
-			spPreviewRend.enabled = false;
+			spPreviewRend.enabled = false;  //diappears if button is not held down
 		}
 		
 		/////////////
@@ -100,7 +108,7 @@ public class SpawnBlockWithInput : MonoBehaviour {
 		if(cooldown==0){
 			
 			if((Input.GetButtonDown("Insec") && !Input.GetButton("Ability")) 
-                || (Input.GetKeyDown("1") && !Input.GetKeyDown("q")) 
+                || (Input.GetKeyDown("1") && !Input.GetKey("q")) 
                 && insec.isSpawned){
 
                 insec.isSpawned = false;
@@ -108,7 +116,7 @@ public class SpawnBlockWithInput : MonoBehaviour {
 			}
 			
 			if((Input.GetButtonDown("Anx") && !Input.GetButton("Ability"))
-                || (Input.GetKeyDown("2") && !Input.GetKeyDown("q"))
+                || (Input.GetKeyDown("2") && !Input.GetKey("q"))
                 && anx.isSpawned){
 
                 anx.isSpawned = false;
@@ -116,7 +124,7 @@ public class SpawnBlockWithInput : MonoBehaviour {
 			}
 			
 			if((Input.GetButtonDown("Frust") && !Input.GetButton("Ability"))
-                || (Input.GetKeyDown("3") && !Input.GetKeyDown("q"))
+                || (Input.GetKeyDown("3") && !Input.GetKey("q"))
                 && frust.isSpawned){
 
 				frust.isSpawned = false;

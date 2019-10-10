@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Moves the spawn preview in key with player's current direction
+ */
 public class SpawnPreviewBehavior : MonoBehaviour {
 
 	private bool isRight;

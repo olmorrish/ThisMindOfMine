@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InsecBlockGrowHandler : MonoBehaviour {
 
-	public bool big = false;
+	public bool big = false;        //flag to see if block has been told to grow
 	public bool biggified = false; 	//flag to see if hitbox changes on growth have been applied
 	private Vector2 temp;
 	private float originalMass; 
@@ -55,15 +55,13 @@ public class InsecBlockGrowHandler : MonoBehaviour {
 			big = false;
 		}
 		
-		//despawned
+		//block is despawned; reset parameters
 		if(state.exiled && biggified){
 			rb.mass = originalMass;
-			
 			
 			temp = hitbox.offset;
 			temp.y -= (7f/16f);
 			hitbox.offset = temp;
-			
 			
 			hitbox.size = new Vector2(1,1);
 			hitbox.offset = new Vector2(0, -(7f/16f));	//was changed if despawned while big
@@ -76,15 +74,18 @@ public class InsecBlockGrowHandler : MonoBehaviour {
 		//Button Handling
 		/////////////////
 		
+        //controller
 		if(Input.GetButton("Ability")){
-			
 			if(Input.GetButtonDown("Insec")){
 				big = true;
 			}
-			
-			
 		}
-		
-		
+
+        //keyboard
+        if (Input.GetKey("q")){
+            if (Input.GetKeyDown("1")){
+                big = true;
+            }
+        }
 	}
 }

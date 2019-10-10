@@ -50,7 +50,7 @@ public class AnxBlockMovement : MonoBehaviour {
 		}
 		
 		if(state.isSpawned && canMove){
-			if(Input.GetAxis("VerticalRS")>0){
+			if(Input.GetAxis("VerticalRS")>0 || Input.GetKey("up")){
 				rb.velocity = Vector3.zero;
 				uplock = true;
 				downlock = false;
@@ -60,7 +60,7 @@ public class AnxBlockMovement : MonoBehaviour {
 				canMove = false;
 				resetter.Up();
 			}
-			else if(Input.GetAxis("VerticalRS")<0){
+			else if(Input.GetAxis("VerticalRS")<0 || Input.GetKey("down")){
 				rb.velocity = Vector3.zero;
 				uplock = false;
 				downlock = true;
@@ -70,7 +70,8 @@ public class AnxBlockMovement : MonoBehaviour {
 				canMove = false;
 				resetter.Down();
 			}
-			else if(Input.GetAxis("HorizontalRS")>0){
+			else if(Input.GetAxis("HorizontalRS")>0 || Input.GetKey("right"))
+            {
 				rb.velocity = Vector3.zero;
 				uplock = false;
 				downlock = false;
@@ -80,7 +81,8 @@ public class AnxBlockMovement : MonoBehaviour {
 				canMove = false;
 				resetter.Right();
 			}
-			else if(Input.GetAxis("HorizontalRS")<0){
+			else if(Input.GetAxis("HorizontalRS")<0 || Input.GetKey("left"))
+            {
 				rb.velocity = Vector3.zero;
 				uplock = false;
 				downlock = false;

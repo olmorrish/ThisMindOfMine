@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Allows the player character to respawn at the last respawn point
+ * Respawn point is declared in the GameState and updates on collision with each new point
+ */
 public class Respawn : MonoBehaviour {
 
 	public PlayerState playerState;

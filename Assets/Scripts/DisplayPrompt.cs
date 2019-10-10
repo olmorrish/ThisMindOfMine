@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Thought bubble popup controller
+ * Checks collision with player character to enable message to show
+ */
 public class DisplayPrompt : MonoBehaviour {
 
 	private Renderer rend;

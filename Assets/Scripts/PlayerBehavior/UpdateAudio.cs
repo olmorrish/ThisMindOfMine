@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Sound controller, currently only for player jumps
+ */
 public class UpdateAudio : MonoBehaviour {
 
 	private bool jumpSoundPlayed;

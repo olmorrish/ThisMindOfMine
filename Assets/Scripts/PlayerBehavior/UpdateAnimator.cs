@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Updates the player and health animators based on the current player State variables
+ */
 public class UpdateAnimator : MonoBehaviour {
 
 	private Rigidbody2D playerRB;
@@ -22,14 +24,11 @@ public class UpdateAnimator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		//////////////////////
-		// Update the Animator
-		//////////////////////
-		
+		// update character animator
 		animator.SetFloat("HorizontalVelocity", playerRB.velocity.x);
 		animator.SetBool("Jumping", !(state.onGround));
-		//animator.SetBool("Grabbing", state.grabbing);
 		
+        // update health animator
 		healthAnimator.SetInteger("healthCount", state.health);
 	}
 }

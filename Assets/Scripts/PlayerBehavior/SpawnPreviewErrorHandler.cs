@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Checks block spawns status and collision on the spawner preview to see if error flash animation needs to play
+ */
 public class SpawnPreviewErrorHandler : MonoBehaviour {
 
 	private BlockState insec;
@@ -24,17 +26,37 @@ public class SpawnPreviewErrorHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		//error flash animation trigger and disable
-		spanim.SetBool("errorFlash", false);	    //otherwise it goes forever!
-		
-		if(spb.overlap && Input.GetButton("Spawn")){
-			if((Input.GetButtonDown("Insec") && !insec.isSpawned) 
-                || (Input.GetButtonDown("Anx") && !anx.isSpawned) 
-                || (Input.GetButtonDown("Frust") && !frust.isSpawned)){
+		//error flash animation disable
+		spanim.SetBool("errorFlash", false);
+
+        //error flash animation triggers
+        if(spb.overlap && (Input.GetButtonDown("Spawn") || Input.GetKeyDown("q"))){    //player must be holding down the spawn button; attempting to spawn
+
+            if((Input.GetButtonDown("Insec") || Input.GetButtonDown("1")) && !insec.isSpawned){
+                spanim.SetBool("errorFlash", true);
+            }
+            if ((Input.GetButtonDown("Anx") || Input.GetButtonDown("2")) && !insec.isSpawned){
+                spanim.SetBool("errorFlash", true);
+            }
+            if ((Input.GetButtonDown("Frust") || Input.GetButtonDown("3")) && !insec.isSpawned){
+                spanim.SetBool("errorFlash", true);
+            }
+
+        }
+
+
+
+
+        /*
+        if (spb.overlap && Input.GetButton("Spawn")){
+			if(    (((Input.GetButtonDown("Insec") || Input.GetButtonDown("1")) && !insec.isSpawned)) 
+                || (((Input.GetButtonDown("Anx") || Input.GetButtonDown("1")) && !anx.isSpawned))
+                || (((Input.GetButtonDown("Frust") || Input.GetButtonDown("1")) && !frust.isSpawned)){
 			
 				spanim.SetBool("errorFlash", true);
 			}
 		}
+        */
 	}
 }
 

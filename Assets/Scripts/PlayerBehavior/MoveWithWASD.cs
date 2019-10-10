@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Allows the object to be controlled via WASD and Spacebar
+ * Controls and restricts player movement speed
+ */
 public class MoveWithWASD : MonoBehaviour {
 
 	//customizable values
@@ -88,22 +91,6 @@ public class MoveWithWASD : MonoBehaviour {
 			playerRB.AddForce((new Vector3(-1, 0, 0)) * horizontalForce, ForceMode2D.Force);
 		}
 		
-		/*
-		if(Input.GetKey("d") && !state.onGround){
-			playerRB.AddForce((new Vector3(1, 0, 0)) * horizontalForce * airControlMultiplier, ForceMode2D.Force);
-		}
-
-		else if(Input.GetKey("d")){
-			playerRB.AddForce((new Vector3(1, 0, 0)) * horizontalForce, ForceMode2D.Force);
-		}
-		if(Input.GetKey("a") && !state.onGround){
-			playerRB.AddForce((new Vector3(-1, 0, 0)) * horizontalForce * airControlMultiplier, ForceMode2D.Force);
-		}
-		else if(Input.GetKey("a")){
-			playerRB.AddForce((new Vector3(-1, 0, 0)) * horizontalForce, ForceMode2D.Force);
-		}
-		*/
-		
 		//update or reset airControlMultiplier
 		if(state.onGround){
 			airControlMultiplier = 1;
@@ -113,7 +100,7 @@ public class MoveWithWASD : MonoBehaviour {
 			airControlMultiplier -= airControlDecay;
 		}
 
-		
+
 		///////////////////////////////
 		// Restrict Horizontal Velocity
 		///////////////////////////////

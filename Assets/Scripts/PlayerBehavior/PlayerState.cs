@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Data class for all player state variables
+ * Includes health and jump position status
+ */
 public class PlayerState : MonoBehaviour {
 
 	public bool onGround;		 

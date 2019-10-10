@@ -16,11 +16,9 @@ public class AnxReset : MonoBehaviour {
 		
 		if(!col.gameObject.tag.Equals("Skilift")){
 			mov.ResetAnx();
-		}
-		
-		
-		
+		}	
 	}
+
 	void OnTriggerStay2D(Collider2D col){
 		if(!col.gameObject.tag.Equals("Skilift")){
 			mov.ResetAnx();
