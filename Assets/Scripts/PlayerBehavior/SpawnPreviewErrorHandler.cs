@@ -30,15 +30,15 @@ public class SpawnPreviewErrorHandler : MonoBehaviour {
 		spanim.SetBool("errorFlash", false);
 
         //error flash animation triggers
-        if(spb.overlap && (Input.GetButtonDown("Spawn") || Input.GetKeyDown("q"))){    //player must be holding down the spawn button; attempting to spawn
+        if(spb.overlap && (Input.GetButton("Spawn") || Input.GetKey("q"))){    //player must be holding down the spawn button; attempting to spawn
 
-            if((Input.GetButtonDown("Insec") || Input.GetButtonDown("1")) && !insec.isSpawned){
+            if((Input.GetButtonDown("Insec") || Input.GetKeyDown("1")) && !insec.isSpawned){
                 spanim.SetBool("errorFlash", true);
             }
-            if ((Input.GetButtonDown("Anx") || Input.GetButtonDown("2")) && !insec.isSpawned){
+            if ((Input.GetButtonDown("Anx") || Input.GetKeyDown("2")) && !anx.isSpawned){
                 spanim.SetBool("errorFlash", true);
             }
-            if ((Input.GetButtonDown("Frust") || Input.GetButtonDown("3")) && !insec.isSpawned){
+            if ((Input.GetButtonDown("Frust") || Input.GetKeyDown("3")) && !frust.isSpawned){
                 spanim.SetBool("errorFlash", true);
             }
 

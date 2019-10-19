@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 
+ * 
+ */
 public class FollowsPlayer : MonoBehaviour {
 
 	private Rigidbody2D rb;
@@ -31,7 +34,6 @@ public class FollowsPlayer : MonoBehaviour {
 			
 			animator.SetBool("isActive", true);
 			
-			
 			rb.AddForce(moveTo * travelForce, ForceMode2D.Force);
 			
 			if(rb.velocity.y == 0f){
@@ -52,20 +54,17 @@ public class FollowsPlayer : MonoBehaviour {
 					rb.AddForce(new Vector3(-10f,0,0), ForceMode2D.Force);
 				}
 			}
-		
 		}
 		
 		else{
 			animator.SetBool("isActive", false);
 		}
-		
-		
 	}
 	
 	
 	
-	
-	bool canSeePlayer(){
+	//Utility method, maybe remove
+	bool CanSeePlayer(){
 		rayDirection = player.transform.position - transform.position;
 		//origin, direction, distance, int layermask
 		hit = Physics2D.Raycast (transform.position, rayDirection, 5f, 8);

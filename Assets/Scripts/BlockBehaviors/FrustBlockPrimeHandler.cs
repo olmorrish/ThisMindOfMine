@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 
+ * 
+ */
 public class FrustBlockPrimeHandler : MonoBehaviour {
 
 	public bool primed = false;
@@ -25,27 +28,24 @@ public class FrustBlockPrimeHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+        //update the animator
 		if(primed){
 			animator.SetBool("isPrimed", true);
 		}
 		
-		
+        //transformation ability
 		if(Input.GetButton("Ability")){
-			
 			if(Input.GetButtonDown("Frust")){
 				primed = true;
 			}	
 		}
 		
+        //de-prime the frsut block if it is ever despawned
 		if(!state.isSpawned && primed){
 			animator.SetBool("isPrimed", false);
 			primed = false;
 		}
-		
-		
 	}
-	
-	
 	
 	//animator-called function to change the hitbox of the block
 	void PrimeAndBig(){
@@ -67,13 +67,4 @@ public class FrustBlockPrimeHandler : MonoBehaviour {
 		temp.y -= (3f/16f);
 		hitbox.offset = temp;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
