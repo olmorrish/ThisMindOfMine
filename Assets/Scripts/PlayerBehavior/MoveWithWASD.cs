@@ -71,7 +71,13 @@ public class MoveWithWASD : MonoBehaviour {
 			if(playerRB.velocity.y < 0){
 				state.jumpHeldDown = false;
 			}
-		}		
+
+            //turns off the flag when the jump key isn't held down
+            if ((!Input.GetKey("w") || !Input.GetButton("Jump")) && state.jumpHeldDown){
+                state.jumpHeldDown = false;
+            }
+
+        }		
 		
 	
 		/////////////////////////////
