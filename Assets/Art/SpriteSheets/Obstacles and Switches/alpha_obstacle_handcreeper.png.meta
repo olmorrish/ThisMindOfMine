@@ -1,27 +1,63 @@
 fileFormatVersion: 2
 guid: 42299ef172323704d985e81bcb0b92f1
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: alpha_obstacle_tentacledoor_0
-    21300002: alpha_obstacle_tentacledoor_1
-    21300004: alpha_obstacle_tentacledoor_2
-    21300006: alpha_obstacle_tentacledoor_3
-    21300008: alpha_obstacle_tentacledoor_4
-    21300010: alpha_obstacle_tentacledoor_5
-    21300012: alpha_obstacle_tentacledoor_6
-    21300014: alpha_obstacle_tentacledoor_7
-    21300016: alpha_obstacle_tentacledoor_8
-    21300018: alpha_obstacle_handcreeper_0
-    21300020: alpha_obstacle_handcreeper_1
-    21300022: alpha_obstacle_handcreeper_2
-    21300024: alpha_obstacle_handcreeper_3
-    21300026: alpha_obstacle_handcreeper_4
-    21300028: alpha_obstacle_handcreeper_5
-    21300030: alpha_obstacle_handcreeper_6
-    21300032: alpha_obstacle_handcreeper_7
-    21300034: alpha_obstacle_handcreeper_8
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: alpha_obstacle_tentacledoor_0
+  - first:
+      213: 21300002
+    second: alpha_obstacle_tentacledoor_1
+  - first:
+      213: 21300004
+    second: alpha_obstacle_tentacledoor_2
+  - first:
+      213: 21300006
+    second: alpha_obstacle_tentacledoor_3
+  - first:
+      213: 21300008
+    second: alpha_obstacle_tentacledoor_4
+  - first:
+      213: 21300010
+    second: alpha_obstacle_tentacledoor_5
+  - first:
+      213: 21300012
+    second: alpha_obstacle_tentacledoor_6
+  - first:
+      213: 21300014
+    second: alpha_obstacle_tentacledoor_7
+  - first:
+      213: 21300016
+    second: alpha_obstacle_tentacledoor_8
+  - first:
+      213: 21300018
+    second: alpha_obstacle_handcreeper_0
+  - first:
+      213: 21300020
+    second: alpha_obstacle_handcreeper_1
+  - first:
+      213: 21300022
+    second: alpha_obstacle_handcreeper_2
+  - first:
+      213: 21300024
+    second: alpha_obstacle_handcreeper_3
+  - first:
+      213: 21300026
+    second: alpha_obstacle_handcreeper_4
+  - first:
+      213: 21300028
+    second: alpha_obstacle_handcreeper_5
+  - first:
+      213: 21300030
+    second: alpha_obstacle_handcreeper_6
+  - first:
+      213: 21300032
+    second: alpha_obstacle_handcreeper_7
+  - first:
+      213: 21300034
+    second: alpha_obstacle_handcreeper_8
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -76,7 +112,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -87,7 +123,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -98,7 +135,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -109,7 +147,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -120,6 +159,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -139,6 +179,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 250f2b05444838741965ed14d8138f87
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
@@ -159,6 +200,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0c09ba529b9ebc64b879d93d00d1bb49
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
@@ -179,6 +221,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0a92aa911b732d44e8d48c121fde8b4e
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -199,6 +242,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 32c41c72aacf43d468244000e2bdae62
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
@@ -219,6 +263,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8d2f2037a8955e94393f325fecb9d3b1
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
@@ -239,6 +284,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8e17aa9c0d709984ea32eabeda043970
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
@@ -259,6 +305,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bb6b5edfcb55f2b49a37ac93811740e5
+      internalID: 21300030
       vertices: []
       indices: 
       edges: []
@@ -279,6 +326,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c898f7eb6a597844ead201f07f0f2296
+      internalID: 21300032
       vertices: []
       indices: 
       edges: []
@@ -299,6 +347,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0f34b9da21bfbe7479cc11bfa6c33aed
+      internalID: 21300034
       vertices: []
       indices: 
       edges: []
@@ -307,10 +356,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 2fa24ec50ad9f8646bc0176c31462634
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
